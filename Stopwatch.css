@@ -1,0 +1,77 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #333;
+}
+
+.container {
+  position: relative;
+  width: 700px;
+  height: 700px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.heading__section {
+  position: relative;
+}
+.heading__section h1 {
+  letter-spacing: 2px;
+  font-size: 7rem;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-fill-color: rgb(213, 216, 76);
+  text-shadow: 0px 0px 15px #fff;
+}
+.timer {
+  position: relative;
+  display: flex;
+  font-size: 3rem;
+  color: white;
+}
+.timer span {
+  margin: 0px 5px;
+}
+.timer .equal {
+  letter-spacing: 2px;
+}
+.timer div:last-child {
+  font-size: 2rem;
+  position: relative;
+  top: 3px;
+}
+.buttons__section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+button {
+  border: none;
+  padding: 10px 30px;
+  background: none;
+  border-radius: 30px;
+  background: blue;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 530;
+  box-shadow: 0px 0px 20px blue;
+  z-index: 2;
+}
