@@ -5,31 +5,38 @@ const milliseconds = document.querySelector(".milliseconds");
 const minutes = document.querySelector(".minutes");
 
 let Id = null;
-let milliSecondsValue = 0;
+let milliSecondsValue = -1;
 let secondsValue = 0;
 let minutesValue = 0;
 
 function initiater() {
-  if (milliSecondsValue < 10) {
-    milliseconds.innerHTML = milliSecondsValue;
+  if (milliSecondsValue < 9) {
     ++milliSecondsValue;
+    milliseconds.innerHTML = milliSecondsValue;
   } else {
-    if (secondsValue < 10) {
-      seconds.innerHTML = "0" + secondsValue;
-    } else {
-      if (secondsValue == 60) {
-        secondsValue = 0;
-        ++minutesValue;
-        if (minutesValue < 10) {
+    if (milliSecondsValue == 9) {
+      milliSecondsValue = -1;
+
+      if (secondsValue == 59) {
+        secondsValue = -1;
+
+        if (minutesValue < 9) {
+          ++minutesValue;
           minutes.innerHTML = "0" + minutesValue;
         } else {
+          ++minutesValue;
           minutes.innerHTML = minutesValue;
         }
       }
-      seconds.innerHTML = secondsValue;
+
+      if (secondsValue < 9) {
+        ++secondsValue;
+        seconds.innerHTML = "0" + secondsValue;
+      } else {
+        ++secondsValue;
+        seconds.innerHTML = secondsValue;
+      }
     }
-    ++secondsValue;
-    milliSecondsValue = 0;
   }
 }
 
